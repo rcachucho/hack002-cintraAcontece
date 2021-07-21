@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import EventForm from "./pages/EventForm";
+import HomePage from "./pages/HomePage";
+import LandingPage from "./pages/LandingPage";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import BackButton from "./components/BackButton";
+import { Switch, Route } from "react-router";
+import Footer from "./components/Footer";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Switch>
+        <Route exact path="/">
+          <LandingPage/>
+        </Route>
+        <Route exact path="/signup">
+          <SignUp/>
+          <BackButton/>
+        </Route>
+        <Route exact path="/homepage">
+          <HomePage/>
+        </Route>
+        <Route exact path="/eventform">
+          <EventForm/>
+          <BackButton/>
+        </Route>
+      </Switch>
+      <Footer/>
     </div>
   );
 }

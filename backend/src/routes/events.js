@@ -13,6 +13,17 @@ eventsRouter.get("/", async(req, res) => {
     }
 })
 
+
+eventsRouter.get("/random", async(req, res) => {
+    try{
+        res.status(200).json({
+            message: "Evento random"
+        })
+    }catch(err){
+        console.log(err)
+    }
+})
+
 // POST /events - Receives an event (json object{}) and returns the event id to use in the frontend
 eventsRouter.post("/", async (req, res) => {
     const eventId = await createEvent(req.body)

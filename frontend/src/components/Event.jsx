@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import InfoPopOver from './InfoPopOver'
 
 function Event() {
     const [events, setEvents] = useState([])
@@ -48,8 +47,7 @@ function Event() {
                             <li>{event.location}</li>
                             <li>{event.etime}</li>
                             <li>{event.price}</li>
-                            <li>{event.tag}</li>
-                            <InfoPopOver events={events}/>
+                            <li>{event.tag}</li>                            
                         </ul>
                     </div>
                 ))
@@ -58,6 +56,7 @@ function Event() {
 
 
             <div>
+                
                 <button onClick={() => console.log(events)}>ConsoleLog</button>
                 <h1>Event</h1>
 

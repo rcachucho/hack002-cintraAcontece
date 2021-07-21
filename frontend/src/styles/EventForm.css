@@ -79,9 +79,9 @@
   
   .submitevent{
     padding: 20px 35px;
-    background-color: #D893EF;
+    background-color: #FFB083;
     color: #000;
-    border: 1px solid #bb46e2;
+    border-color: 1px solid #f57327;
     transition: ease-in-out background-color 250ms, ease-in-out color 250ms;
     font-size: 20px;
     margin-left: 20px;
@@ -90,13 +90,15 @@
   
   .submitevent:hover {
     cursor: pointer;
-    background-color: #FFB083;
-    border-color: #f57327;
+    background-color: #D893EF;
+    border:2px solid #bb46e2;
     color: #000;
   }
 
   .submitevent:disabled{
     opacity: 0.5;
     transform: scale(0.8);
+    background-color: #D893EF;
+    border:2px solid #bb46e2;
   }
 

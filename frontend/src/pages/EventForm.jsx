@@ -1,5 +1,5 @@
 import React from 'react'
-import { Field, Formik } from 'formik'
+import { Formik } from 'formik'
 import "../styles/EventForm.css"
 
 function EventForm() {

@@ -6,13 +6,19 @@
 // Mostrar um evento específico
 
 const{
-    findEvents
+    findEvents,
+    insertEvent
 } = require('../data/events');
 
 
 async function displayEvents(){
-    return await findEvents({},{projection: {_id: 0}})
+    return await findEvents({},{projection: {}})
+}
+
+async function createEvent(event){
+    return await insertEvent(event)
 }
 
 module.exports = {
-    displayEvents}
+    displayEvents,
+    createEvent}

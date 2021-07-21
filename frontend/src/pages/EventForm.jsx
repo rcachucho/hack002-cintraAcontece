@@ -9,7 +9,7 @@ function EventForm() {
             <div className="formcontainer">
 
                 <Formik
-                    initialValues={{ title: "", edate: "", location: "", etime: "", price: "", tag: "", info: "", site: "" }}
+                    initialValues={{ title: "", edate: "", location: "", price: "", tag: "", info: "", site: "" }}
                     onSubmit={(values, { setSubmitting }) => {
                         setTimeout(() => {
                             console.log("Submitting", values);
@@ -65,7 +65,7 @@ function EventForm() {
                                         <input
                                             id="edate"
                                             name="edate"
-                                            type="date"
+                                            type="datetime-local"
                                             placeholder="Insira a data do evento"
                                             className="eventinputdate"
                                             required
@@ -74,20 +74,6 @@ function EventForm() {
                                             
                                         />
 
-
-
-                                        <label className="eventlabel">Hora</label>
-                                        <input
-                                            id="etime"
-                                            name="etime"
-                                            type="time"
-                                            placeholder="Insira a hora do evento"
-                                            className="eventinputtime"
-                                            required
-                                            value={values.etime}
-                                            onChange={handleChange}
-                                            
-                                        />
                                     </div>
 
                                     <div className="row-span2">
@@ -147,6 +133,7 @@ function EventForm() {
                                             required
                                             value={values.price}
                                             onChange={handleChange}
+                                            step="0.01"
                                             
                                         />
                                     </div>

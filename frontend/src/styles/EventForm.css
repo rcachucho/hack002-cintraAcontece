@@ -80,11 +80,12 @@
   .submitevent{
     padding: 20px 35px;
     background-color: #D893EF;
-    color: white;
+    color: #000;
     border: 1px solid #bb46e2;
     transition: ease-in-out background-color 250ms, ease-in-out color 250ms;
     font-size: 20px;
     margin-left: 20px;
+    transition: 0.3s ease-in-out;
   }
   
   .submitevent:hover {
@@ -92,5 +93,10 @@
     background-color: #FFB083;
     border-color: #f57327;
     color: #000;
+  }
+
+  .submitevent:disabled{
+    opacity: 0.5;
+    transform: scale(0.8);
   }
 

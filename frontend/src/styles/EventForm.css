@@ -1,0 +1,53 @@
+.eventform {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+.formcontainer{
+     background-color: #8BBAB4;
+
+}
+
+  .eventlabel,
+  .eventinput {
+    display: flex;
+    width: 100%;
+    justify-content: row;
+  }
+  
+  .eventlabel {
+    margin-bottom: 5px;
+    height: 22px;
+    font-size: 20px;
+  }
+
+  .eventinputprice{
+      width: 20%;
+      height: 50%;
+      font-size: 40px;
+  }
+  
+  .eventinput {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #777;
+    font-size: 20px;
+  }
+  
+  .submitevent{
+    padding: 10px 15px;
+    background-color: #D893EF;
+    color: white;
+    border: 1px solid #bb46e2;
+    transition: ease-in-out background-color 250ms, ease-in-out color 250ms;
+    font-size: 20px;
+  }
+  
+  .submitevent:hover {
+    cursor: pointer;
+    background-color: #FFB083;
+    border-color: #f57327;
+    color: #000;
+  }

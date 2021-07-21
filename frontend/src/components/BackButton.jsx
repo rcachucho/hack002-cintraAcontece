@@ -1,10 +1,14 @@
-import { useHistory} from "react-router";
+import { useHistory } from "react-router";
 
 
-function BackButton(){
+function BackButton() {
     const history = useHistory();
 
-    return <button onClick={() => history.push("homepage")}>Homepage</button> 
+    return (
+        <button onClick={() => history.push("homepage")}>
+            Homepage
+        </button>
+    )
 }
 
 

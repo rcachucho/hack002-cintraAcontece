@@ -9,11 +9,15 @@
 
 .formcontainer{
      background-color: #8BBAB4;
-      padding: 10px;
+      padding: 60px;
 }
 
 .row-span1{
-  margin-right: 100px;
+  margin-right: 80px;
+}
+
+.row-span2{
+  margin-right: 80px;
 }
 
   .eventlabel,
@@ -27,7 +31,8 @@
     margin-bottom: 5px;
     height: 22px;
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    margin-top: 20px;
   }
 
   .eventinput {
@@ -41,8 +46,8 @@
   
   .eventinputtag{
     margin-bottom: 5px;
-    height: 50px;
-    font-size: 25px
+    height: 25px;
+    font-size: 18px
   }
 
   .eventinputdate{
@@ -50,6 +55,14 @@
     height: 50px;
     font-size: 21px;
     width: 180px;
+  }
+
+  .eventinputinfo{
+    margin-bottom: 5px;
+    height: 100px;
+    width: 90%;
+    font-size: 14px;
+    margin-bottom: 20px;
   }
   
   .eventinputprice{
@@ -71,7 +84,7 @@
     border: 1px solid #bb46e2;
     transition: ease-in-out background-color 250ms, ease-in-out color 250ms;
     font-size: 20px;
-    margin-left: 90px;
+    margin-left: 20px;
   }
   
   .submitevent:hover {

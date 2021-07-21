@@ -27,28 +27,31 @@ function EventForm() {
                         } = props;
 
                         return (
-                            <form onSubmit={handleSubmit}>
+                            <form id="form1" onSubmit={handleSubmit}>
                                 <div className="eventform">
                                     <div className="row-span1">
-                                        <label className="eventlabel">Título do evento</label>
+
+                                        <label className="eventlabel">Categoria</label>
+                                        <select id="tag" name="tag" className="eventinputtag" required>
+                                            <option value="" > - - - Escolha uma das opções - - - </option>
+                                            <option value="cinema">Cinema</option>
+                                            <option value="dance">Dança</option>
+                                            <option value="expo">Exposição</option>
+                                            <option value="music">Música</option>
+                                            <option value="theatre">Teatro</option>
+                                        </select>
+
+                                        <label className="eventlabel" >Título do evento</label>
                                         <input
                                             id="titulo"
                                             name="titulo"
                                             type="text"
                                             placeholder="Insira o título do evento"
                                             className="eventinput"
+                                            required
                                         />
 
-                                        <label className="eventlabel">Categoria</label>
-                                        <select id="tag" name="tag" className="eventinputtag">
-                                            <option value="disabled" disabled>Escolha a sua opção</option>
-                                            <option value="cinema">Cinema</option>
-                                            <option value="dance">Dança</option>
-                                            <option value="expo">Exposição</option>
-                                            <option value="music">Música</option>
-                                            <option value="painting">Pintura</option>
-                                            <option value="theatre">Teatro</option>
-                                        </select>
+
 
                                         <label className="eventlabel">Data</label>
                                         <input
@@ -57,6 +60,7 @@ function EventForm() {
                                             type="date"
                                             placeholder="Insira a data do evento"
                                             className="eventinputdate"
+                                            required
                                         />
 
 
@@ -68,6 +72,7 @@ function EventForm() {
                                             type="time"
                                             placeholder="Insira a hora do evento"
                                             className="eventinputtime"
+                                            required
                                         />
                                     </div>
 
@@ -79,24 +84,34 @@ function EventForm() {
                                             type="text"
                                             placeholder="Insira o local do evento"
                                             className="eventinput"
+                                            required
                                         />
+                                        <div>
 
-                                        <label className="eventlabel">Info</label>
-                                        <input
-                                            id="info"
-                                            name="info"
-                                            type="text"
-                                            placeholder="Insira uma breve descrição"
-                                            className="eventinput"
-                                        />
+                                            <label className="eventlabel">Info</label>
+                                            <textarea
+                                                id="info"
+                                                name="info"
+                                                type="text"
+                                                placeholder="Insira uma breve descrição:
+                                            faixa(s) etária(s) a que se destina, sinopse, etc... "
+                                                className="eventinputinfo" cols="30" rows="10"
+                                                required
+                                                maxLength="280"
+                                            ></textarea>
+                                        </div>
 
-                                        <label className="eventlabel">Website</label>
+                                    </div>
+
+                                    <div className="row-span2">
+                                        <label className="eventlabel">Website (URL)</label>
                                         <input
                                             id="site"
                                             name="site"
                                             type="url"
                                             placeholder="Insira o seu website"
                                             className="eventinput"
+                                            required
                                         />
 
                                         <label className="eventlabel">Preço (em euros)</label>
@@ -107,9 +122,12 @@ function EventForm() {
                                             min="0"
                                             placeholder="€€€"
                                             className="eventinputprice"
+                                            required
                                         />
-
                                     </div>
+
+
+
 
 
                                     <div>

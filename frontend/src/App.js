@@ -12,20 +12,25 @@ function App() {
   return (
     <div>
       <Switch>
+
         <Route exact path="/">
           <LandingPage/>
         </Route>
+
         <Route exact path="/signup">
           <SignUp/>
           <BackButton/>
         </Route>
+
         <Route exact path="/homepage">
           <HomePage/>
         </Route>
+
         <Route exact path="/eventform">
           <EventForm/>
           <BackButton/>
         </Route>
+
       </Switch>
       <Footer/>
     </div>

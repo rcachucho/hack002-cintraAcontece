@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import BackButton from "./components/BackButton";
 import { Switch, Route } from "react-router";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <BackButton/>
         </Route>
       </Switch>
+      <Footer/>
     </div>
   );
 }

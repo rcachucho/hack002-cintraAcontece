@@ -1,6 +1,5 @@
-const mongodb = require("mongodb")
 const {getCollection} = require('./db')
-const ObjectId = require('mongodb')
+const {ObjectId} = require('mongodb')
 
 
 async function findEvents(query, options){
@@ -15,8 +14,15 @@ async function insertEvent(event){
     return res.insertedId
 }
 
+async function findEventById(id){
+    const collection = await getCollection("CintraAcontece", "Events");
+    const res = await collection.findOne({_id: ObjectId(id)})
+    return res
+}
+
 module.exports = {
     findEvents,
-    insertEvent
+    insertEvent,
+    findEventById
 }
 // Usar {} quando forem vários module exports

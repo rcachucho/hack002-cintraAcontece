@@ -1,8 +1,8 @@
 const express = require("express")
-const {displayEvents, createEvent} = require('../services/events')
+const {displayEvents, createEvent, displayEventById} = require('../services/events')
 const eventsRouter = express.Router()
 
-// GET /evens - Fetch from the frontend asks for the objectives to display them 
+// GET /events - Fetch from the frontend asks for the objectives to display them 
 eventsRouter.get("/", async(req, res) => {
     try{
         res.status(200).json({
@@ -14,18 +14,22 @@ eventsRouter.get("/", async(req, res) => {
 })
 
 
-eventsRouter.get("/random", async(req, res) => {
-    try{
-        res.status(200).json({
-            message: "Evento random"
-        })
-    }catch(err){
-        console.log(err)
-    }
+// GET events/random - Fetch from frontend requests a random EventId
+eventsRouter.get("/random", async (req, res) => { 
+    const events = await displayEvents()
+    const eventsNumber = events.length
+
+    const randomEventNumber = Math.floor(Math.random() * eventsNumber) 
+    const randomEvent = events[randomEventNumber]
+    const eventId = randomEvent._id
+    res.status(200).json({
+        eventId
+    })
 })
 
 // POST /events - Receives an event (json object{}) and returns the event id to use in the frontend
 eventsRouter.post("/", async (req, res) => {
+    console.log("A correr o post errado")
     const eventId = await createEvent(req.body)
     res.status(201).json({
         title: req.body.title,
@@ -37,9 +41,13 @@ eventsRouter.post("/", async (req, res) => {
         id: eventId})
 })
 
-// GET /events/:id - Receives a request from the frontend to display a specific objective 
-eventsRouter.get("/:id", async (req, res) => {
-    res.status(200).json("Objetivo por id")
+
+// GET /events/:id - Receives a request from the frontend to display a specific event
+eventsRouter.post("/:id", async (req, res) => {
+    console.log(req.body)
+    console.log("A correr o post certo")
+    const eventObj = await displayEventById(req.body.eventId);
+    res.status(200).json(eventObj)
 })
 
 

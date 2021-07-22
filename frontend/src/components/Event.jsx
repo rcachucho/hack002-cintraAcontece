@@ -13,7 +13,7 @@ function Event() {
 
     // It sets an interval in wich the randomEvent displayed at the bottom of the page will change. When the user clicks, it stops
     function changeEventOnTime() {
-        if (!userClick && events !== []) {
+        if (!userClick) {
             setInterval(() => {
                 fetchRandomEvent()
             }, 7500)
@@ -22,8 +22,9 @@ function Event() {
 
     // As the user clicks on an event, it changes the event displayed at the bottom to that specific event. It also stops the changeEventOnTime
     function handleClick(id) {
-        fetchEventById(id);
-        setUserClick(true);        
+        fetchEventById(id);   
+        setUserClick(true);    
+        clearInterval()
     }
 
     // POST - It sends the eventId to show that specific event
@@ -41,17 +42,18 @@ function Event() {
         }
     }
 
-    // It gets a random event
+    // It gets a random event 
     async function fetchRandomEvent() {
         const res = await fetch("/events/random")
         const resBody = await res.json();
-        if (res.status === 200) {
+        if (res.status === 200 && !userClick) {
             fetchEventById(resBody.eventId)
         }
     }
 
     // Loads all the events, already sorted by date
     async function fetchEvents() {
+        console.log("A correr fetch events")
         const res = await fetch("/events")
         const resBody = await res.json()
         if (res.status === 200) {
@@ -74,9 +76,9 @@ function Event() {
                             <li>{event.title}</li>
                             <li>{event.edate}</li>
                             <li>{event.location}</li>
-                            <li>{event.etime}</li>
                             <li>{event.price}</li>
                             <li>{event.tag}</li>
+                            <li>{event.site}</li>
                             <button onClick={() => handleClick(event._id)}>+Info</button>
                         </ul>
                     </div>
@@ -87,6 +89,7 @@ function Event() {
             <div>
                 <h1>Event</h1>
                 <p>Título: {eventDisplay.title}</p>
+                <p>Descrição: {eventDisplay.info}</p>
             </div>
         </section>
     )

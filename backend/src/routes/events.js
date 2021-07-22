@@ -17,6 +17,7 @@ function orderEventsByDate(events) {
 // GET /events - Fetch from the frontend asks for the objectives to display them 
 eventsRouter.get("/", async (req, res) => {
     const events = await displayEvents();
+    console.log(events)
     try {
         res.status(200).json({
             events: orderEventsByDate(events)

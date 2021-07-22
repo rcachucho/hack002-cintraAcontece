@@ -9,7 +9,7 @@ function BackButton() {
             Voltar ao ínicio
         </button>
     )
-}
+};
 
 
-export default BackButton
+export default BackButton;

@@ -28,7 +28,6 @@
   }
   
   .eventlabel {
-    margin-bottom: 5px;
     height: 22px;
     font-size: 28px;
     margin-bottom: 40px;
@@ -36,7 +35,7 @@
   }
 
   .eventinput {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     padding: 5px;
     border-radius: 3px;
     border: 1px solid #777;
@@ -45,8 +44,8 @@
   }
   
   .eventinputtag{
-    margin-bottom: 5px;
-    height: 25px;
+    margin-bottom: 20px;
+    height: 60px;
     font-size: 18px
   }
 
@@ -81,6 +80,7 @@
     font-size: 20px;
     margin-left: 20px;
     transition: 0.3s ease-in-out;
+    margin-top: 80px;
   }
   
   .submitevent:hover {

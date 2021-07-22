@@ -5,8 +5,8 @@ function BackButton() {
     const history = useHistory();
 
     return (
-        <button onClick={() => history.push("homepage")}>
-            Homepage
+        <button onClick={() => history.push("/")}>
+            Voltar ao ínicio
         </button>
     )
 }

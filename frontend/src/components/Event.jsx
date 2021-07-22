@@ -8,14 +8,12 @@ function Event() {
     // As the page loads, loads the event, changes a random event time-based and gets from BE a random event
     useEffect(() => {
         fetchEvents()
-        changeEventOnTime()
-        fetchRandomEvent()
     }, [])
 
 
     // It sets an interval in wich the randomEvent displayed at the bottom of the page will change. When the user clicks, it stops
     function changeEventOnTime() {
-        if (!userClick) {
+        if (!userClick && events !== []) {
             setInterval(() => {
                 fetchRandomEvent()
             }, 7500)
@@ -59,8 +57,10 @@ function Event() {
         if (res.status === 200) {
             // console.log(resBody.events)
             setEvents(resBody.events)
+            changeEventOnTime();
+            fetchRandomEvent();
         } else {
-            console.log("erro no fetch do evento")
+            return false
         }
     }
 

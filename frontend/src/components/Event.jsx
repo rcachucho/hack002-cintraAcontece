@@ -89,7 +89,8 @@ function Event() {
     return (
         <section className={events}>
             <form>
-                <select onChange={(e) => handleSubmit(e)} name="tag" id="tag">
+                <div className="dropdownevent">
+                    <select onChange={(e) => handleSubmit(e)} name="tag" id="tag">
                     <option value=""> - - - Encontrar por categoria - - -</option>
                     <option value="cinema">Cinema</option>
                     <option value="dança">Dança</option>
@@ -97,6 +98,8 @@ function Event() {
                     <option value="música">Música</option>
                     <option value="teatro">Teatro</option>
                 </select>
+                </div>
+                
             </form>
             {
                 events.map((event) => (

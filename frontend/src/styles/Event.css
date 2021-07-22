@@ -48,9 +48,13 @@
     text-align: center;
     font-size: 30px;
     font-weight: bolder;
-
-
 }
+
+.dropdownevent{
+    display: flex;
+    flex-direction:column;
+}
+
 
 
 

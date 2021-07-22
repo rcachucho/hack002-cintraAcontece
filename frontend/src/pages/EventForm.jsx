@@ -5,6 +5,7 @@ import { useHistory } from "react-router";
 
 function EventForm() {
 
+    const history = useHistory();
     async function createNewEvent(values) {
         const res = await fetch("events", {
             method: "POST",
@@ -13,7 +14,6 @@ function EventForm() {
         })
         const resBody = await res.json()
         console.log(resBody)
-
 
     }
 

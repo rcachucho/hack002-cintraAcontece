@@ -56,10 +56,10 @@ function EventForm() {
                                         >
                                             <option value="" > - - - Escolha uma das opções - - - </option>
                                             <option value="cinema">Cinema</option>
-                                            <option value="dance">Dança</option>
-                                            <option value="expo">Exposição</option>
-                                            <option value="music">Música</option>
-                                            <option value="theatre">Teatro</option>
+                                            <option value="dança">Dança</option>
+                                            <option value="exposição">Exposição</option>
+                                            <option value="música">Música</option>
+                                            <option value="teatro">Teatro</option>
                                         </select>
 
                                         <label className="eventlabel" >Título do evento</label>

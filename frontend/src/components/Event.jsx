@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function Event() {
     const [events, setEvents] = useState([])
@@ -65,6 +66,9 @@ function Event() {
         }
     }
 
+    function redirecionar(site){
+        console.log(site)
+    }
 
     return (
         <section className={events}>
@@ -77,7 +81,7 @@ function Event() {
                             <li>{event.location}</li>
                             <li>{event.price}</li>
                             <li>{event.tag}</li>
-                            <li>{event.site}</li>
+                            <li> <a href={event.site}> {event.site} </a></li>
                             <button onClick={() => handleClick(event._id)}>+Info</button>
                         </ul>
                     </div>

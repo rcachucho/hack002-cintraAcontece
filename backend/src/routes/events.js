@@ -1,8 +1,8 @@
 const express = require("express")
-const { displayEvents, createEvent, displayEventById } = require('../services/events')
+const { displayEvents, createEvent, displayEventById, displayEventsByTag } = require('../services/events')
 const eventsRouter = express.Router()
 const isFuture = require('date-fns/isFuture')
-const { formatISO9075, intlFormat } = require("date-fns")
+const {intlFormat } = require("date-fns")
 
 
 function orderEventsByDate(events) {
@@ -30,7 +30,7 @@ function orderEventsByDate(events) {
 // GET /events - Fetch from the frontend asks for the objectives to display them 
 eventsRouter.get("/", async (req, res) => {
     const events = await displayEvents();
-    console.log(events)
+    // console.log(events)
     try {
         res.status(200).json({
             events: orderEventsByDate(events)
@@ -74,13 +74,20 @@ eventsRouter.post("/", async (req, res) => {
     })
 })
 
+// POST /events/tag/- receives a request from the frontend to display a specific tag
+eventsRouter.post("/tag", async (req, res) => {
+    const eventsByTag = await displayEventsByTag(req.body.tag);
+    console.log(eventsByTag)
+    res.status(200).json({eventsByTag})
+})
 
-// GET /events/:id - Receives a request from the frontend to display a specific event
+// POST /events/:id - Receives a request from the frontend to display a specific event
 eventsRouter.post("/:id", async (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     const eventObj = await displayEventById(req.body.eventId);
     res.status(200).json(eventObj)
 })
+
 
 
 module.exports = eventsRouter

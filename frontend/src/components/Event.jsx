@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
 
 function Event() {
     const [events, setEvents] = useState([])
@@ -66,10 +65,8 @@ function Event() {
         }
     }
 
-    function redirecionar(site){
-        console.log(site)
-    }
 
+    
     return (
         <section className={events}>
             {
@@ -86,7 +83,6 @@ function Event() {
                         </ul>
                     </div>
                 ))
-
             }
 
             <div>

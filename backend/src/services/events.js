@@ -8,24 +8,31 @@
 const{
     findEvents,
     findEventById,
-    insertEvent
+    insertEvent,
+    findEventsByTag
 } = require('../data/events');
 
 
 async function displayEvents(){
-    return await findEvents({},{projection: {}})
+    return await findEvents({},{projection: {}});
 }
 
 async function displayEventById(id){
-    return await findEventById(id)
+    return await findEventById(id);
 }
 
 
 async function createEvent(event){
-    return await insertEvent(event)
+    return await insertEvent(event);
+}
+
+async function displayEventsByTag(tag){
+    console.log(tag)
+    return await findEventsByTag(tag);
 }
 
 module.exports = {
     displayEvents,
     displayEventById,
+    displayEventsByTag,
     createEvent}

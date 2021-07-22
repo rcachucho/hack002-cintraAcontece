@@ -9,7 +9,7 @@ function EventForm() {
             <div className="formcontainer">
 
                 <Formik
-                    initialValues={{ title: "", edate: "", location: "", price: "", tag: "", info: "", site: "" }}
+                    initialValues={{ title: "", author: "", edate: "", location: "", price: "", tag: "", info: "", site: "" }}
                     onSubmit={(values, { setSubmitting }) => {
                         setTimeout(() => {
                             console.log("Submitting", values);
@@ -37,7 +37,7 @@ function EventForm() {
                                             required
                                             value={values.tag}
                                             onChange={handleChange}
-                                            >
+                                        >
                                             <option value="" > - - - Escolha uma das opções - - - </option>
                                             <option value="cinema">Cinema</option>
                                             <option value="dance">Dança</option>
@@ -56,7 +56,7 @@ function EventForm() {
                                             required
                                             value={values.title}
                                             onChange={handleChange}
-                                            
+
                                         />
 
 
@@ -71,7 +71,7 @@ function EventForm() {
                                             required
                                             value={values.edate}
                                             onChange={handleChange}
-                                            
+
                                         />
 
                                     </div>
@@ -87,8 +87,20 @@ function EventForm() {
                                             required
                                             value={values.location}
                                             onChange={handleChange}
-                                            
                                         />
+
+                                        <label className="eventlabel">Autor</label>
+                                        <input
+                                            id="author"
+                                            name="author"
+                                            type="text"
+                                            placeholder="Insira o autor do evento"
+                                            className="eventinput"
+                                            required
+                                            value={values.author}
+                                            onChange={handleChange}
+                                        />
+
                                         <div>
                                             <label className="eventlabel">Info</label>
                                             <textarea
@@ -102,7 +114,7 @@ function EventForm() {
                                                 maxLength="280"
                                                 value={values.info}
                                                 onChange={handleChange}
-                                                
+
                                             ></textarea>
                                         </div>
 
@@ -119,7 +131,7 @@ function EventForm() {
                                             required
                                             value={values.site}
                                             onChange={handleChange}
-                                            
+
                                         />
 
                                         <label className="eventlabel">Preço (em euros)</label>
@@ -134,17 +146,17 @@ function EventForm() {
                                             value={values.price}
                                             onChange={handleChange}
                                             step="0.01"
-                                            
+
                                         />
+
+
+                                        <div>
+                                            <button type="submit" className="submitevent" disabled={isSubmitting}
+                                            >Submeter evento
+                                            </button>
+
+                                        </div>
                                     </div>
-
-                                    <div>
-                                        <button type="submit" className="submitevent" disabled={isSubmitting}
-                                        >Submeter evento
-                                        </button>
-
-                                    </div>
-
                                 </div>
 
 

@@ -4,26 +4,26 @@ import { useHistory } from "react-router";
 function Login() {
     const history = useHistory();
     return (
-        <div>
+        <div className="loginbackground">
+            <img className="logominlog" src="images/logocintramin.png" />
 
-            <h1>Login</h1>
 
-            <div>
-
+            <div className="logincontainer">
+                <h1>Login</h1>
                 <form>
-                    <label className="emaillabel" >E-mail</label>
+                    <label className="loginlabel" >E-mail</label>
                     <input
                         type="email"
                         placeholder="Insira o seu e-mail"
-                        className="emailinput"
+                        className="logininput"
                         required
                     />
 
-                    <label className="passwordlabel" >Password</label>
+                    <label className="loginlabel" >Password</label>
                     <input
                         type="password"
                         placeholder="Insira a sua password"
-                        className="passwordinput"
+                        className="logininput"
                         required
                     />
 

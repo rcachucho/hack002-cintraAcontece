@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import "../styles/Event.css"
 
 function Event() {
     const [events, setEvents] = useState([])
@@ -71,24 +72,22 @@ function Event() {
             {
                 events.map((event) => (
                     <div key={event._id}>
-                        <ul>
-                            <li>{event.title}</li>
-                            <li>{event.edate}</li>
-                            <li>{event.location}</li>
-                            <li>{event.price}</li>
-                            <li>{event.tag}</li>
-                            <li>{event.site}</li>
-                            <button onClick={() => handleClick(event._id)}>+Info</button>
+                        <ul className="eventlist">
+                            <li className="valueslisttitle">{event.title}</li>
+                            <li className="valueslist">{event.edate}</li>
+                            <li className="valueslist">{event.location}</li>
+                            <li className="valueslist">{event.price}€</li>
+                            <li className="valueslist">{event.tag}</li>
+                            <li className="valueslist">{event.site}</li>
+                            <a href="#pageend"><button className="infobutton" onClick={() => handleClick(event._id)}>+Info</button></a>
                         </ul>
                     </div>
                 ))
-
             }
 
-            <div>
-                <h1>Event</h1>
-                <p>Título: {eventDisplay.title}</p>
-                <p>Descrição: {eventDisplay.info}</p>
+            <div id="pageend">
+                <h1 className="eventshowinfo">{eventDisplay.title}</h1>
+                <p  className="eventshowinfop">Descrição: {eventDisplay.info}</p>
             </div>
         </section>
     )

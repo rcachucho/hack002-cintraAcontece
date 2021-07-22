@@ -1,0 +1,40 @@
+.logominlog{
+    height: 90px; 
+    margin-top: 10px;
+    margin-left: 47vw;
+}
+
+.loginbackground{
+    background-color: #2e2f2f;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: row;
+}
+
+.logincontainer{
+    background-color: #8BBAB4;
+     padding: 60px;
+}
+
+.loginlabel,
+  .logininput {
+    display: flex;
+    width: 100%;
+    justify-content: row;
+  }
+  
+  .loginlabel {
+    height: 22px;
+    font-size: 28px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+
+  .logininput {
+    margin-bottom: 16px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #777;
+    font-size: 20px;
+    width: 300px;
+  }

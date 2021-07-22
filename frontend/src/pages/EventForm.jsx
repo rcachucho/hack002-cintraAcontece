@@ -3,6 +3,18 @@ import { Formik } from 'formik'
 import "../styles/EventForm.css"
 
 function EventForm() {
+
+
+    // function createNewEvent(values) {
+    //     const res = await fetch("events", {
+    //         method: "POST",
+    //         body: JSON.stringify({value}),
+    //         headers: { "Content-Type": "application/json" },
+    //     })
+    // }
+
+
+
     return (
         <div>
             <h1>EventForm</h1>
@@ -11,6 +23,7 @@ function EventForm() {
                 <Formik
                     initialValues={{ title: "", author: "", edate: "", location: "", price: "", tag: "", info: "", site: "" }}
                     onSubmit={(values, { setSubmitting }) => {
+                        // createNewEvent(values)
                         setTimeout(() => {
                             console.log("Submitting", values);
                             setSubmitting(false);

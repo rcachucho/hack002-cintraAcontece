@@ -5,10 +5,12 @@ const isFuture = require('date-fns/isFuture')
 
 
 function orderEventsByDate(events) {
-    const eventsToSend = events.filter((e) => isFuture(new Date(e.edate)))
-    return eventsToSend.sort(function(a,b){
-        return new Date(a.edate) - new Date(b.edate);
-    })
+    if (events !== undefined) {
+        const eventsToSend = events.filter((e) => isFuture(new Date(e.edate)))
+        return eventsToSend.sort(function (a, b) {
+            return new Date(a.edate) - new Date(b.edate);
+        })
+    }
 }
 
 
@@ -32,10 +34,13 @@ eventsRouter.get("/random", async (req, res) => {
 
     const randomEventNumber = Math.floor(Math.random() * eventsNumber)
     const randomEvent = events[randomEventNumber]
-    const eventId = randomEvent._id
-    res.status(200).json({
-        eventId
-    })
+    if (randomEvent) {
+        const eventId = randomEvent._id
+        res.status(200).json({
+            eventId
+        })
+
+    }
 })
 
 // POST /events - Receives an event (json object{}) and returns the event id to use in the frontend
@@ -45,6 +50,7 @@ eventsRouter.post("/", async (req, res) => {
         title: req.body.title,
         date: req.body.edate,
         location: req.body.location,
+        author: req.body.author,
         time: req.body.etime,
         price: req.body.price,
         tag: req.body.tag,

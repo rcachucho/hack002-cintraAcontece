@@ -1,0 +1,104 @@
+{
+    "events": [
+        {
+            "title": "Concerto Xutos",
+            "author": "Xutos",
+            "edate": "2022-08-24T13:07",
+            "location": "Olga Cadaval",
+            "price": 12.5,
+            "tag": "música",
+            "info": "Concerto",
+            "site": "https://www.facebook.com/Xutos"
+        },
+        {
+            "title": "Hamlet",
+            "author": "TEC",
+            "edate": "2021-08-04T19:00",
+            "location": "Olga Cadaval",
+            "price": 12.5,
+            "tag": "teatro",
+            "info": "Concerto",
+            "site": "https://www.facebook.com/TEC"
+        },
+        {
+            "title": "Concerto Zarco",
+            "author": "Zarco",
+            "edate": "2021-07-24T12:07",
+            "location": "Teatro Meridional",
+            "price": 12.5,
+            "tag": "teatro",
+            "info": "Concerto",
+            "site": "https://www.facebook.com/Zarco"
+        },
+        {
+            "title": "Mostra de cinema",
+            "author": "Cinemateca",
+            "edate": "2021-07-24T12:07",
+            "location": "Olga Cadaval",
+            "price": 12.5,
+            "tag": "teatro",
+            "info": "Concerto",
+            "site": "https://www.cinemateca.com"
+        },
+        {
+            "title": "Concerto Xutos",
+            "author": "Tapafuros",
+            "edate": "2021-07-24T12:07",
+            "location": "Olga Cadaval",
+            "price": 12.5,
+            "tag": "teatro",
+            "info": "Concerto",
+            "site": "https://www.facebook.com/Zarco"
+        },
+        {
+            "title": "Concerto Xutos",
+            "author": "Tapafuros",
+            "edate": "2021-07-24T12:07",
+            "location": "Olga Cadaval",
+            "price": 12.5,
+            "tag": "teatro",
+            "info": "Concerto",
+            "site": "https://www.facebook.com/Zarco"
+        },
+        {
+            "title": "Concerto Xutos",
+            "author": "Tapafuros",
+            "edate": "2021-07-24T12:07",
+            "location": "Olga Cadaval",
+            "price": 12.5,
+            "tag": "teatro",
+            "info": "Concerto",
+            "site": "https://www.facebook.com/Zarco"
+        },
+        {
+            "title": "Concerto Xutos",
+            "author": "Tapafuros",
+            "edate": "2021-07-24T12:07",
+            "location": "Olga Cadaval",
+            "price": 12.5,
+            "tag": "teatro",
+            "info": "Concerto",
+            "site": "https://www.facebook.com/Zarco"
+        },
+        {
+            "title": "Concerto Xutos",
+            "author": "Tapafuros",
+            "edate": "2021-07-24T12:07",
+            "location": "Olga Cadaval",
+            "price": 12.5,
+            "tag": "teatro",
+            "info": "Concerto",
+            "site": "https://www.facebook.com/Zarco"
+        },
+        {
+            "title": "Concerto Xutos",
+            "author": "Tapafuros",
+            "edate": "2021-07-24T12:07",
+            "location": "Olga Cadaval",
+            "price": 12.5,
+            "tag": "teatro",
+            "info": "Concerto",
+            "site": "https://www.facebook.com/Zarco"
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+.infobutton{
+    padding: 10px 20px;
+    background-color: #8bbab4;
+    border: 3px solid #66a4b8;
+    transition: 1s all;
+    font-size: 20px;
+}
+
+.infobutton:hover{
+    background-color: #467788;
+    color: white;
+    cursor: pointer;
+}
+
+.eventlist{
+    list-style-type: none;
+    margin: 20px 20px 50px 20px;
+    padding: 0;
+    color:white;
+    border:3px solid white;
+    width: 20vw;
+}
+
+.eventshowinfo{
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 0px;
+    color: white;
+}
+
+.eventshowinfop{
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 200px;
+    color: white;
+    max-width:370px;
+}
+
+.valueslist{
+    margin-bottom: 4px;
+    text-align: center;
+    font-size: 20px;
+
+}
+
+.valueslisttitle{
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.dropdownevent{
+    display: flex;
+    flex-direction:column;
+}
+
+
+
+

@@ -1,10 +1,11 @@
 import React from 'react'
 import { Formik } from 'formik'
 import "../styles/EventForm.css"
+import { useHistory } from "react-router";
 
 function EventForm() {
 
-
+    const history = useHistory();
     async function createNewEvent(values) {
         const res = await fetch("events", {
             method: "POST",
@@ -19,8 +20,8 @@ function EventForm() {
 
 
     return (
-        <div>
-            <h1>EventForm</h1>
+        <div className="eventformbackground">
+            <img className="logomin" src="images/logocintramin.png" />
             <div className="formcontainer">
 
                 <Formik
@@ -127,7 +128,7 @@ function EventForm() {
                                             faixa(s) etária(s) a que se destina, sinopse, etc... "
                                                 className="eventinputinfo" cols="30" rows="10"
                                                 required
-                                                maxLength="280"
+                                                maxLength="50"
                                                 value={values.info}
                                                 onChange={handleChange}
 
@@ -181,7 +182,7 @@ function EventForm() {
                         );
                     }}
                 </Formik>
-
+                <button className="backbuttonevent" onClick={() => history.push("/homepage")}>Voltar</button>
             </div>
         </div>
     )

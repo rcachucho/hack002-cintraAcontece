@@ -1,11 +1,23 @@
 .eventform {
-    max-width: 500px;
-    width: 100%;
+    width: 100vh;
     margin: 0 auto;
     display:flex;
     align-items: center;
     justify-content: center;
   }
+
+.logomin{
+  height: 90px; 
+  margin-top: 10px;
+  margin-left: 47vw;
+}
+
+.eventformbackground{
+  background-color: #2e2f2f;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: row;
+}
 
 .formcontainer{
      background-color: #8BBAB4;
@@ -95,5 +107,9 @@
     transform: scale(0.8);
     background-color: #D893EF;
     border:2px solid #bb46e2;
+  }
+
+  .backbuttonevent{
+    padding: 10px 20px;
   }
 

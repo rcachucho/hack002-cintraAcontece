@@ -1,0 +1,13 @@
+.createeventbutton{
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #66a4b8;
+    border: 3px solid #8bbab4;
+    transition: 1s all;
+    
+}
+
+.createeventbutton:hover{
+    background-color: #3a6574;
+    color: white;
+}

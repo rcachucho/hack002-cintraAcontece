@@ -16,7 +16,7 @@ function App() {
           <LandingPage/>
         </Route>
         <Route exact path="/signup">
-          <SignUp/>
+          <Login/>
           <BackButton/>
         </Route>
         <Route exact path="/homepage">

@@ -1,0 +1,40 @@
+.lbackground{
+    background-color: #2e2f2f;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column ;
+}
+
+.logolanding{
+    height: 300px;
+    margin-top: 200px;
+    margin-bottom: 40px;
+}
+
+.button1{
+    padding: 20px 35px;
+    font-size: 20px;
+    background-color: #66a4b8;
+    border: 3px solid #8bbab4;
+    transition: 1s all;
+}
+
+.button2{
+    padding: 20px 35px;
+    font-size: 20px;
+    background-color: #d893ef;
+    border: 3px solid #9344ad;
+    transition: 1s all;   
+}
+
+.button1:hover{
+    background-color: #3a6574;
+    color: white;
+}
+
+.button2:hover{
+    background-color: #833c9b;
+    color: white;
+}

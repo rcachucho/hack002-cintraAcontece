@@ -1,0 +1,99 @@
+.eventform {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.formcontainer{
+     background-color: #8BBAB4;
+      padding: 60px;
+}
+
+.row-span1{
+  margin-right: 80px;
+}
+
+.row-span2{
+  margin-right: 80px;
+}
+
+  .eventlabel,
+  .eventinput {
+    display: flex;
+    width: 100%;
+    justify-content: row;
+  }
+  
+  .eventlabel {
+    height: 22px;
+    font-size: 28px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+
+  .eventinput {
+    margin-bottom: 16px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #777;
+    font-size: 20px;
+    width: 300px;
+  }
+  
+  .eventinputtag{
+    margin-bottom: 20px;
+    height: 60px;
+    font-size: 18px
+  }
+
+  .eventinputdate{
+    margin-bottom: 5px;
+    height: 60px;
+    font-size: 16px;
+    width: 200px;
+  }
+
+  .eventinputinfo{
+    margin-bottom: 5px;
+    height: 100px;
+    width: 90%;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .eventinputprice{
+      width: 20%;
+      height: 50%;
+      font-size: 25px;
+  }
+
+  
+  .submitevent{
+    padding: 20px 35px;
+    background-color: #FFB083;
+    color: #000;
+    border-color: 1px solid #f57327;
+    transition: ease-in-out background-color 250ms, ease-in-out color 250ms;
+    font-size: 20px;
+    margin-left: 20px;
+    transition: 0.3s ease-in-out;
+    margin-top: 80px;
+  }
+  
+  .submitevent:hover {
+    cursor: pointer;
+    background-color: #D893EF;
+    border:2px solid #bb46e2;
+    color: #000;
+  }
+
+  .submitevent:disabled{
+    opacity: 0.5;
+    transform: scale(0.8);
+    background-color: #D893EF;
+    border:2px solid #bb46e2;
+  }
+

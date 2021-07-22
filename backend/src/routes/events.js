@@ -2,21 +2,35 @@ const express = require("express")
 const { displayEvents, createEvent, displayEventById } = require('../services/events')
 const eventsRouter = express.Router()
 const isFuture = require('date-fns/isFuture')
+const { formatISO9075, intlFormat } = require("date-fns")
 
 
 function orderEventsByDate(events) {
     if (events !== undefined) {
         const eventsToSend = events.filter((e) => isFuture(new Date(e.edate)))
-        return eventsToSend.sort(function (a, b) {
+        const eventsSorted = eventsToSend.sort(function (a, b) {
             return new Date(a.edate) - new Date(b.edate);
         })
+        for (const event of eventsSorted){
+            event.edate = intlFormat(new Date(event.edate), {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              }, {
+                locale: 'pt-PT',
+            })
+        }
+        return eventsSorted
     }
 }
+
 
 
 // GET /events - Fetch from the frontend asks for the objectives to display them 
 eventsRouter.get("/", async (req, res) => {
     const events = await displayEvents();
+    console.log(events)
     try {
         res.status(200).json({
             events: orderEventsByDate(events)

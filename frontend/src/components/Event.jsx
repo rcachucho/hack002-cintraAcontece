@@ -1,29 +1,31 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function Event() {
     const [events, setEvents] = useState([])
     const [eventDisplay, setEventDisplay] = useState({})
     const [userClick, setUserClick] = useState(false)
+    const [iid, setIid] = useState(false)
 
     // As the page loads, loads the event, changes a random event time-based and gets from BE a random event
     useEffect(() => {
         fetchEvents()
     }, [])
 
-
     // It sets an interval in wich the randomEvent displayed at the bottom of the page will change. When the user clicks, it stops
     function changeEventOnTime() {
-        if (!userClick && events !== []) {
-            setInterval(() => {
+        setIid(setInterval(() => {
+            if (!userClick) {
                 fetchRandomEvent()
-            }, 7500)
-        }
+            }
+        }, 7500))
     }
 
-    // As the user clicks on an event, it changes the event displayed at the bottom to that specific event. It also stops the changeEventOnTime
-    function handleClick(id) {
+    // As the user  clicks on an event, it changes the event displayed at the bottom to that specific event. It also stops the changeEventOnTime
+    const handleClick = (id) => {
         fetchEventById(id);
-        setUserClick(true);        
+        clearInterval(iid)
+        setUserClick(true);
     }
 
     // POST - It sends the eventId to show that specific event
@@ -41,11 +43,11 @@ function Event() {
         }
     }
 
-    // It gets a random event
+    // It gets a random event 
     async function fetchRandomEvent() {
         const res = await fetch("/events/random")
         const resBody = await res.json();
-        if (res.status === 200) {
+        if (res.status === 200 && !userClick) {
             fetchEventById(resBody.eventId)
         }
     }
@@ -64,6 +66,9 @@ function Event() {
         }
     }
 
+    function redirecionar(site){
+        console.log(site)
+    }
 
     return (
         <section className={events}>
@@ -74,9 +79,9 @@ function Event() {
                             <li>{event.title}</li>
                             <li>{event.edate}</li>
                             <li>{event.location}</li>
-                            <li>{event.etime}</li>
                             <li>{event.price}</li>
                             <li>{event.tag}</li>
+                            <li> <a href={event.site}> {event.site} </a></li>
                             <button onClick={() => handleClick(event._id)}>+Info</button>
                         </ul>
                     </div>
@@ -87,6 +92,7 @@ function Event() {
             <div>
                 <h1>Event</h1>
                 <p>Título: {eventDisplay.title}</p>
+                <p>Descrição: {eventDisplay.info}</p>
             </div>
         </section>
     )

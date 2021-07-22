@@ -5,13 +5,16 @@ import "../styles/EventForm.css"
 function EventForm() {
 
 
-    // function createNewEvent(values) {
-    //     const res = await fetch("events", {
-    //         method: "POST",
-    //         body: JSON.stringify({value}),
-    //         headers: { "Content-Type": "application/json" },
-    //     })
-    // }
+    async function createNewEvent(values) {
+        const res = await fetch("events", {
+            method: "POST",
+            body: JSON.stringify(values),
+            headers: { "Content-Type": "application/json" },
+        })
+        const resBody = await res.json()
+        console.log(resBody)
+
+    }
 
 
 
@@ -21,11 +24,11 @@ function EventForm() {
             <div className="formcontainer">
 
                 <Formik
-                    initialValues={{ title: "", author: "", edate: "", location: "", price: "", tag: "", info: "", site: "" }}
+                    initialValues={{ title: "", author: "", edate: "", location: "", price: "", tag: "", info: "", site: "https://" }}
                     onSubmit={(values, { setSubmitting }) => {
-                        // createNewEvent(values)
+                        createNewEvent(values)
                         setTimeout(() => {
-                            console.log("Submitting", values);
+                            // console.log("Submitting", values);
                             setSubmitting(false);
                         }, 500);
                     }}
@@ -53,10 +56,10 @@ function EventForm() {
                                         >
                                             <option value="" > - - - Escolha uma das opções - - - </option>
                                             <option value="cinema">Cinema</option>
-                                            <option value="dance">Dança</option>
-                                            <option value="expo">Exposição</option>
-                                            <option value="music">Música</option>
-                                            <option value="theatre">Teatro</option>
+                                            <option value="dança">Dança</option>
+                                            <option value="exposição">Exposição</option>
+                                            <option value="música">Música</option>
+                                            <option value="teatro">Teatro</option>
                                         </select>
 
                                         <label className="eventlabel" >Título do evento</label>
@@ -107,7 +110,7 @@ function EventForm() {
                                             id="author"
                                             name="author"
                                             type="text"
-                                            placeholder="Insira o autor do evento"
+                                            placeholder="Insira o responsável do evento"
                                             className="eventinput"
                                             required
                                             value={values.author}
@@ -158,7 +161,7 @@ function EventForm() {
                                             required
                                             value={values.price}
                                             onChange={handleChange}
-                                            step="0.01"
+                                            step="0.50"
 
                                         />
 

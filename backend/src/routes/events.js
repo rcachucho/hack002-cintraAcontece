@@ -76,9 +76,11 @@ eventsRouter.post("/", async (req, res) => {
 
 // POST /events/tag/- receives a request from the frontend to display a specific tag
 eventsRouter.post("/tag", async (req, res) => {
+    console.log(req.body)
     const eventsByTag = await displayEventsByTag(req.body.tag);
-    console.log(eventsByTag)
-    res.status(200).json({eventsByTag})
+    if (eventsByTag.length > 0){
+        res.status(200).json({eventsByTag})
+    } else res.status(404).json("Not found")
 })
 
 // POST /events/:id - Receives a request from the frontend to display a specific event

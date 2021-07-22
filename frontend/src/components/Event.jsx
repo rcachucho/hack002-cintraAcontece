@@ -65,10 +65,38 @@ function Event() {
         }
     }
 
+    async function fetchEventsByTag(eventTag) {
+        console.log(eventTag)
+        const res = await fetch("/events/tag", {
+            method: "POST",
+            body: JSON.stringify({ tag: eventTag }),
+            headers: { "Content-Type": "application/json" },
+        })
+        const resBody = await res.json();
+        if (res.status === 200) {
+            setEvents(resBody.eventsByTag)
+        } else if (res.status === 404) {
+            fetchEvents()
+            alert("Não foram encontrados resultados, por favor tente outra categoria.")
+        }
+    }
 
-    
+    function handleSubmit(e) {
+        fetchEventsByTag(e.target.value)
+    }
+
     return (
         <section className={events}>
+            <form>
+                <select onChange={(e) => handleSubmit(e)} name="tag" id="tag">
+                    <option value=""> - - - Encontrar por categoria - - -</option>
+                    <option value="cinema">Cinema</option>
+                    <option value="dança">Dança</option>
+                    <option value="exposição">Exposição</option>
+                    <option value="música">Música</option>
+                    <option value="teatro">Teatro</option>
+                </select>
+            </form>
             {
                 events.map((event) => (
                     <div key={event._id}>
@@ -84,7 +112,6 @@ function Event() {
                     </div>
                 ))
             }
-
             <div>
                 <h1>Event</h1>
                 <p>Título: {eventDisplay.title}</p>

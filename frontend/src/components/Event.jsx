@@ -20,7 +20,7 @@ function Event() {
         }, 7500))
     }
 
-    // As the user clicks on an event, it changes the event displayed at the bottom to that specific event. It also stops the changeEventOnTime
+    // As the user  clicks on an event, it changes the event displayed at the bottom to that specific event. It also stops the changeEventOnTime
     const handleClick = (id) => {
         fetchEventById(id);
         clearInterval(iid)

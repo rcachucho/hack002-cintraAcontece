@@ -5,13 +5,16 @@ function Event() {
     const [eventDisplay, setEventDisplay] = useState({})
     const [userClick, setUserClick] = useState(false)
 
+    // As the page loads, loads the event, changes a random event time-based and gets from BE a random event
     useEffect(() => {
         fetchEvents()
-        changeEvent()
+        changeEventOnTime()
         fetchRandomEvent()
     }, [])
 
-    function changeEvent() {
+
+    // It sets an interval in wich the randomEvent displayed at the bottom of the page will change. When the user clicks, it stops
+    function changeEventOnTime() {
         if (!userClick) {
             setInterval(() => {
                 fetchRandomEvent()
@@ -19,12 +22,13 @@ function Event() {
         }
     }
 
+    // As the user clicks on an event, it changes the event displayed at the bottom to that specific event. It also stops the changeEventOnTime
     function handleClick(id) {
         fetchEventById(id);
-        setUserClick(true);
-        
+        setUserClick(true);        
     }
 
+    // POST - It sends the eventId to show that specific event
     async function fetchEventById(eventId) {
         const res = await fetch(`/events/${eventId}`, {
             method: "POST",
@@ -39,6 +43,7 @@ function Event() {
         }
     }
 
+    // It gets a random event
     async function fetchRandomEvent() {
         const res = await fetch("/events/random")
         const resBody = await res.json();
@@ -47,7 +52,7 @@ function Event() {
         }
     }
 
-
+    // Loads all the events, already sorted by date
     async function fetchEvents() {
         const res = await fetch("/events")
         const resBody = await res.json()
@@ -58,6 +63,7 @@ function Event() {
             console.log("erro no fetch do evento")
         }
     }
+
 
     return (
         <section className={events}>
@@ -78,14 +84,11 @@ function Event() {
 
             }
 
-
             <div>
                 <h1>Event</h1>
                 <p>Título: {eventDisplay.title}</p>
             </div>
-
         </section>
-
     )
 }
 
